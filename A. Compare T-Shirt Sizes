@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+#define sz(v) (int)v.size()
+using namespace std;
+void solve()
+{
+
+     string a,b;cin>>a>>b;
+     char ca=a.back();
+     char cb=b.back();
+     if(ca==cb)
+     {
+         if(sz(a)==sz(b)){cout<<"="<<endl;}
+        else if(ca=='S')
+         {
+             cout<<(sz(a)<sz(b)?'>':'<')<<endl;
+         }
+         else{
+            cout<<(sz(a)<sz(b)?'<':'>')<<endl;;
+         }
+     }
+     else{
+        cout<<((ca)<(cb)?'>':'<')<<endl;;
+     }
+
+
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+}
