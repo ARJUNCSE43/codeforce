@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+#define sz(v) (int)v.size()
+#define ll long long
+using namespace std;
+ll func(ll l,ll r,ll cost,ll n,ll m,ll k)
+{
+    if(l==n && r==m)
+    {
+        if(cost==k)
+        {
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+    ll sum1=0;
+    ll sum=0;
+    if(l>=1 && l<=n && r>=1 && r+1<=m)
+    {
+        sum=func(l,r+1,cost+l,n,m,k);
+    }
+    else if(l>=1 && l+1<=n && r>=1 && r<=m)
+    {
+        sum1=func(l+1,r,cost+r,n,m,k);
+    }
+    return sum||sum1;
+
+
+}
+void solve()
+{
+
+    ll n,m,k;
+    cin>>n>>m>>k;
+    if(func(1,1,0,n,m,k)){
+       cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+
+}
+int main()
+{
+    ll t; cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+}
