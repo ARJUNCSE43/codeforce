@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+
+
+// todo defines
+#define ll                  long long
+
+#define ld                  long double
+#define f(i,n)              for(ll i=0;i<(n);i++)
+#define f1(i,n)             for(ll i=1;i<=n;i++)
+#define el  	            "\n"
+#define sq(a)               (a)*(a)
+#define pb                  push_back
+#define asort(a,n)          sort(a,a+n)
+#define dsort(a,n)          sort(a,a+n,greater<>())
+#define vasort(v)           sort(v.begin(), v.end());
+#define vdsort(v)           sort(v.begin(), v.end(),greater<>());
+#define cina(arr)           f(i,n) cin >> arr[i];
+#define YES                 cout << "YES\n"
+#define Yes                 cout << "Yes"<<el
+#define yes                 cout << "yes"<<el
+#define NO                  cout << "NO\n"
+#define No                  cout << "No"<<el
+#define no                  cout << "no"<<el
+#define covid19             ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define rep(i, begin, end)  for (__typeof(end) i = (begin) - ((begin) > (end)); i != (end) - ((begin) > (end)); i += 1 - 2 * ((begin) > (end)))
+#define TC                  int t; cin >> t; while(t--)
+using namespace std;
+void solve()
+{
+    int a,b,c,d,e,f;
+    cin>>a>>b>>c>>d>>e>>f;
+    int ans=-1;
+    if((a==c && a==e) && (f>min(b,d)&& f<max(b,d)))
+    {
+        ans=abs(d-b)+2;
+    }
+    else if(b==d && d==f && (e>min(a,c) && e<max(a,c)))
+    {
+        ans=abs(a-c)+2;
+    }
+    else{
+
+        ans=(abs(a-c)+abs(b-d));
+
+    }
+    cout<<ans<<endl;
+}
+int main()
+{
+
+    TC
+    {
+
+        solve();
+    }
+    return 0;
+}
