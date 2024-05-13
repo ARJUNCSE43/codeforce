@@ -5,35 +5,26 @@
 #define no cout<<"NO"<<endl;
 #define yes cout<<"YES"<<endl;
 using namespace std;
+bool squary(int n)
+{
+    int y=sqrt(n);
+    return y*y==n;
+}
 void solve()
 {
-  int n;
+  ll n;
   cin>>n;
-  map<ll,ll>mp;
-  mp[2]=1;
-  mp[4]=1;
-  ll ans=4;
-  ll i=1;
-  while(ans<=1e9)
+  if(n%2==0 && squary(n/2))
   {
-      ll an=i+i+1;
-      an*=4;
-      ans+=an;
-      mp[ans]=1;
-      i++;
+      yes;
   }
-  ans=2;
-  i=1;
-  while(ans<=1e9)
+  else if(n%4==0 && squary(n/4))
   {
-      ll an=i+i+1;
-      an*=2;
-      ans+=an;
-      mp[ans]=1;
-      i++;
+      yes;
   }
-  if(mp[n]==1){yes;}
-  else{no;}
+  else{
+    no;
+  }
 }
 int main() {
 	int t;
