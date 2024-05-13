@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define vi vector<int>
+#define vii vector<ll>
+#define no cout<<"NO"<<endl;
+#define yes cout<<"YES"<<endl;
+using namespace std;
+void solve()
+{
+  int n;
+  cin>>n;
+  map<ll,ll>mp;
+  mp[2]=1;
+  mp[4]=1;
+  ll ans=4;
+  ll i=1;
+  while(ans<=1e9)
+  {
+      ll an=i+i+1;
+      an*=4;
+      ans+=an;
+      mp[ans]=1;
+      i++;
+  }
+  ans=2;
+  i=1;
+  while(ans<=1e9)
+  {
+      ll an=i+i+1;
+      an*=2;
+      ans+=an;
+      mp[ans]=1;
+      i++;
+  }
+  if(mp[n]==1){yes;}
+  else{no;}
+}
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+    {
+        solve();
+    }
+
+	return 0;
+}
+
