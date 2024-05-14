@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define vi vector<int>
+#define vii vector<ll>
+#define no cout<<"NO"<<endl;
+#define yes cout<<"YES"<<endl;
+#define mod 1000000007
+using namespace std;
+
+ll power(ll base,ll p)
+{
+
+    ll ans=1;
+    while(p){
+        if(p%2==1)
+        {
+            ans=(ans*base)%mod;
+            p--;
+        }
+        else{
+            base=(base*base)%mod;
+            p/=2;
+        }
+    }
+    return ans;
+}
+void solve()
+{
+
+ ll a,b;
+ cin>>a>>b;
+ ll ans=1e9;
+ ll cnt=0;
+
+ for(int i=0; i*i<=a; i++)
+ {
+     if(b==1 && i==0)continue;
+     cnt=i;
+     ll c=a;
+     while(c)
+     {
+         c/=(b+i);
+         cnt++;
+     }
+     ans=min(cnt,ans);
+ }
+ cout<<ans<<endl;
+}
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+    {
+        solve();
+    }
+
+	return 0;
+}
